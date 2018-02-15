@@ -1,0 +1,14 @@
+data: f1(4)    value 'ABCD',
+         f2         type I  value    '1234-'.	 
+start-of-selection.
+write: /  f1,				"output is ABCD 
+ / 'Edit mask_:__:_', f1 using edit mask '_:__:_',	"output is A:BC
+ /'Edit mask_:__:_(6)',(6) f1 using edit mask '_:__:_',"output is A:BC:D
+ /'LL', f1 using edit mask 'LL_',	       "output is A
+ /'LL_:__' ,f1 using edit mask 'LL_:__',	"output is A:BC
+ /'RR_:__' ,f1 using edit mask 'RR_:__',	"output is B:CD
+ / 'LLV______' ,f2 using edit mask 'LLV______',	"output is –1234
+ / 'RRV______',f2 using edit mask 'RRV______',	"output is –    1234
+ / 'RRV_,__', f2 using edit mask 'RRV__,__',	"output is –    1,234
+ / 'LLV_,__', f2 using edit mask 'LLV__,__',	"output is    –1,234
+ / f1 using edit mask 'V___'.	"output is VABC

@@ -1,0 +1,18 @@
+data:  begin of s1,
+	   c1       type p  decimals 2 value '1234.56',
+           c2(3)  		       	value 'ABC',
+	   c3(4)           		value '5678',			
+       end of s1,
+       begin of s2,
+	    c1(8),
+	    x2(3)  		       	 value 'XYZ',
+	    c3         type i  		 value '1234',			
+	end of s2.
+start-of-selection.
+write:   / 's1                                    :', s1-c1, s1-c2, s1-c3.
+write:   / 's2 before move-corresponding          :', s2-c1, s2-x2, s2-c3.
+move-corresponding s1  to s2.
+*same as coding the following two statements
+*move s1-c1  to s2-c1     perform conversion
+*move s1-c3  to s2-c3     perform conversion
+write:   / 's2 after move-corresponding            :', s2-c1, s2-x2, s2-c3.

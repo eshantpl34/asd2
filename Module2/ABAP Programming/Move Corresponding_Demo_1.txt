@@ -1,0 +1,24 @@
+
+DATA: BEGIN OF address,
+        firstname(20) TYPE c VALUE 'Fred',
+        surname(20) TYPE c VALUE 'Flintstone',
+        initials(4) TYPE c VALUE 'FF',
+        street(20) TYPE c VALUE 'Cave Avenue',
+        number TYPE i VALUE '11',
+        postcode(5) TYPE n VALUE '98765',
+        city(20) TYPE c VALUE  'Bedrock',
+      END OF address.
+
+DATA:   BEGIN OF name,
+        surname(20) TYPE c,
+        firstname(20) TYPE c,
+        initials(4) TYPE c,
+        title(10) TYPE c VALUE 'Mister',
+      END OF name.
+
+MOVE-CORRESPONDING address TO name.
+WRITE:/  name-SURNAME.
+WRITE:/ NAME-FIRSTNAME.
+WRITE:/ NAME-INITIALS.
+WRITE:/ NAME-TITLE.
+

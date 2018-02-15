@@ -1,0 +1,31 @@
+data: f1(4)    type p  value 1234.
+start-of-selection.
+write: / '-----+------1------+---',
+       / '12345678901234567'.
+write /1 'X'.    "X
+write    'YZ'.   "XYZ
+write  2 'YZ'.   "ZYZZ
+write  3  'ABC'. "XYABC
+write  4  f1.    "XYA  1.234
+write  7 'Z'.   "XYA  1Z234
+
+
+
+
+*OUTPUT
+*XYA     1Z234
+*Program test debugging
+*In the debugger click on Display list
+*This shows the output  window and we can advance one step ahead
+*Note: Debug the program and see it properly
+
+
+
+
+
+OUTPUT
+XYA     1Z234
+Program test debugging
+In the debugger click on Display list
+This shows the output  window and we cam advance one step ahead
+Note: Debug the program and see it properly

@@ -1,0 +1,13 @@
+REPORT z.
+data: f1(4)    type c  value 'ABCD'.
+write: / '-----+------1------+---',		"write out a ruler
+       / '12345678901234567'.
+write  /  f1(2).					"output is AB
+write /   f1+0(2).				"output is AB
+write /   f1+2 .				   "output is CD
+write: / f1+2(1),f1 .			"output is C   ABCD
+write: /(2) f1+2(1),f1 .			"output is C   ABCD
+
+
+*+offset
+*() length

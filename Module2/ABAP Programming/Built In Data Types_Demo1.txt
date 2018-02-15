@@ -1,0 +1,16 @@
+REPORT Z.
+DATA NUMBER   TYPE I VALUE 1.
+DATA NAME(25) TYPE C VALUE 'Vandana'.
+
+WRITE NUMBER.
+WRITE NAME.
+
+
+________________________________
+
+REPORT Z.
+DATA: NUMBER   TYPE I VALUE 1,
+      NAME(25) TYPE C VALUE 'Vandana'.
+
+WRITE: NUMBER,
+       NAME.

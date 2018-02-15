@@ -1,0 +1,19 @@
+data:  begin of s1,
+	  d1      type d   value  '19980217', "8 bytes
+  	n1(4)   type n   value  '1234',	  "4 bytes
+	c1         value 'A',		  "1 byte
+	c2         value 'B',		  "1 byte
+        end of s1,
+      	begin of s2,
+	  y1(4)         type n,      	   "4 bytes
+	   m1(2)        type n,       	   "2 bytes
+	   d1(2)        type n,	           "2 bytes
+	   n1(2),  		     	   "2 bytes
+	   c1(4),			   "4 bytes
+	end of s2.
+start-of-selection.
+s2  = s1. 
+write:   / s1,                       "displays 199802171234AB
+	/ s2,                         "displays199802171234AB 
+	/ s1-d1, s1-n1, s1-c1, s1-c2,  "displays 17021998 1234 A B
+	/ s2-y1, s2-m1, s2-d1, s2-n1, s2-c1. "displays 1998 02 17 12 34AB

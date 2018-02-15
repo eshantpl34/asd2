@@ -1,0 +1,15 @@
+REPORT z.
+data: begin of empinfo,
+           code            type  i value 100,
+           name(30),
+           salary          type  p decimals 2,
+           date            type d,
+        end of empinfo,
+empdata like empinfo.
+empinfo-code  = '2720.77'.
+empinfo-name  = 'Vandana'.
+empdata-code  =  '909.45'.
+empdata-name  =  'Vaishali'.
+write: /  empinfo-code, empinfo-name,
+      / empdata-code,  empdata-name. 
+                       

@@ -1,0 +1,11 @@
+REPORT Z.
+data: mylfa1 	like lfa1, "like a table in the DDIC
+   myaddr   like addr.	    " like a structure in the DDIC
+mylfa1-name1    =  'Vandana K'.
+mylfa1-telf1       =  '1-243-2746'.
+myaddr-land1     = 'CA'.
+
+write: /  mylfa1-name1,
+             mylfa1-telf1, 
+myaddr-land1. 
+                       

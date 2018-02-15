@@ -1,0 +1,10 @@
+REPORT z.
+data var1 type i value 10.
+data var2 type i .
+data var5 like var2 value 25.
+
+types mytype type i.
+data var3 type mytype value 30.
+data var4 type mytype.
+var2 = 20.
+var4 = 40.

@@ -1,0 +1,58 @@
+Step1 
+To create a Type pool
+Start a new session
+type /ose11
+select type group enter the name as 
+ZVKTP
+Enter short text
+enter package $tmp
+Select Local object
+ctrl+f2
+
+
+TYPE-POOL ZVKTP .
+types: 	ZVKTP_dollars(16)		type  p  decimals  2,
+	ZVKTP_lira(16)			type  p  decimals  2.
+constants: 	ZVKTP_warning_threshold	type  i value 5000,
+  ZVKTP_amalgamation_date		type  sy-datum value  '20030827'.
+
+
+--------------------------------------------------------------
+
+
+type-pools ZVKTP.
+data:  begin of american_sums,
+	petty_cash	type ZVKTP_dollars,
+	pay_outs	type ZVKTP_dollars,
+	lump_sums	type ZVKTP_dollars,
+	end of american_sums.
+start-of-selection.
+american_sums-pay_outs	= '9500.03'.
+
+if  american_sums-pay_outs > ZVKTP_warning_threshold.
+	write : / 'Warning', american_sums-pay_outs,
+ 	'exceed threshold ', ZVKTP_warning_threshold.
+endif.
+----------------------------
+---------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

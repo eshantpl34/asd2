@@ -1,0 +1,27 @@
+report z.
+tables sflight.
+*data: begin of sflight,
+*  paymentsum type sflight-paymentsum,
+*  planetype   type sflight-planetype,
+*  price     type sflight-price,
+*    fldate  type sflight-fldate,
+*   connid    type sflight-connid,
+*   carrid   type sflight-carrid,
+*
+*end of sflight.
+
+*select *
+select paymentsum planetype price
+    fldate connid carrid
+   up to 5 rows 
+   into
+   CORRESPONDING FIELDS OF
+    sflight
+  from sflight order by carrid.
+write:  /1  sflight-carrid,
+        15 sflight-connid,
+        25 sflight-fldate,
+          sflight-price ,
+          sflight-planetype ,
+          sflight-paymentsum .
+endselect.

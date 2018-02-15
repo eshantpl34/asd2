@@ -1,0 +1,18 @@
+report z.
+DATA: BEGIN OF   fsname,
+                   first_name(25)   TYPE c,
+                   middle_name(10)  TYPE c,
+                   last_name(25)    TYPE c,
+	    END OF fsname. 
+     
+DATA:  BEGIN OF fs_address.
+            include structure fsname as name.
+DATA:       street(20)        TYPE c,
+            city(25)          TYPE c,
+       END OF fs_address. 
+fs_address-first_name = 'Vandana'.
+write fs_address-first_name. 
+
+
+"fs_address-name-first_name = 'Vandana'. 
+"write fs_address-name-first_name.

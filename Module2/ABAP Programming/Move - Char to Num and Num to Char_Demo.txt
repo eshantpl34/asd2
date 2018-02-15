@@ -1,0 +1,10 @@
+data:  char(7) type c value '5678',
+       num  type i value 1234.
+start-of-selection.
+
+char = num . "allowed
+num  = char. "not allowed  if char contains characters
+              " allowed  if char contains numeric values
+WRITE :/ 'After Move'.
+WRITE:/  ' Char :' , char.
+WRITE:/  ' Num :' , Num.

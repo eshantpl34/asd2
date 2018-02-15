@@ -1,0 +1,16 @@
+REPORT  Z.
+
+*A DDIC Table and Structure can also be included in a field string
+
+data  begin of fs1.
+	include structure lfa1.
+	data: extrafield1(3),
+        extrafield2(3),
+end of fs1.
+
+
+fs1-lifnr                  =  12.
+fs1-extrafield1       =  'XYZ'.
+
+write: /  fs1-lifnr,            
+          fs1-extrafield1.

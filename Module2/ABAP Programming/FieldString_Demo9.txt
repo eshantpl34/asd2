@@ -1,0 +1,25 @@
+
+tables lfa1.
+select * from lfa1 where lifnr > '0000001050' order by lifnr.
+		write: / lfa1-lifnr, lfa1-name1, lfa1-land1.
+endselect.
+
+
+---------------------------------
+
+tables zvkemp1.
+select * from zvkemp1 where empno > 7300 order by empno.
+		write: / zvkemp1-empno1, zvkemp1-ename.
+endselect.
+
+
+* This program  displays the list of fields from the above table 
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+report z.
+*data : begin of lfa1,
+*  name1 like lfa1-name1,
+*  land1 like lfa1-land1,
+*end of lfa1.  
+tables lfa1.
+lfa1-name1 = 'Bugsy'.
+lfa1-land1   = 'US'.
+write:  /  lfa1-name1,  lfa1-land1.

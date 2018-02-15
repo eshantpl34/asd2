@@ -1,0 +1,30 @@
+*To execute a page break on the condition that less than a certain number of
+*lines is left on a page, use the RESERVE statement:
+*
+*Syntax: RESERVE <n> LINES.                 Output:
+*REPORT ZCAP_REPORT LINE-SIZE 40. "LINE-COUNT 8(2).
+*END-OF-PAGE.
+*ULINE.
+*START-OF-SELECTION.
+*DO 4 TIMES.
+*WRITE / SY-INDEX.
+*ENDDO.
+*DO 2 TIMES.
+*WRITE / SY-INDEX.
+*ENDDO.
+*RESERVE 3 LINES.
+*WRITE: / 'LINE 1', / 'LINE 2', / 'LINE 3'.
+
+
+REPORT Z NO STANDARD PAGE HEADING LINE-COUNT 10(2).
+
+START-OF-SELECTION.
+  DO 5 TIMES.
+*   RESERVE 4 LINES.
+    WRITE: / '1', / '2', / '3'.
+    SKIP.
+  ENDDO.
+
+END-OF-PAGE.
+  ULINE.
+  WRITE sy-pagno.

@@ -1,0 +1,33 @@
+REPORT Z.
+data: begin of fsnames,
+           firstname(30) value 'aaa',
+           lastname(30),
+       end of fsnames.
+
+data: begin of empinfo,
+               code        type  i,
+               name        like fsnames,
+               salary      type  p,
+               date         type d,
+         end of empinfo.
+
+empinfo-code             = 2720.
+write : fsnames-firstname.   "aaa "displays aaa
+
+empinfo-name-firstname   =  'Vandana'.
+empinfo-name-lastname    =  'Koleshwar'.
+
+
+write: /  empinfo-code,
+          empinfo-name-firstname, 
+          empinfo-name-lastname. 
+
+
+
+
+
+
+
+
+
+

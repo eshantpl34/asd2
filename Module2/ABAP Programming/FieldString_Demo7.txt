@@ -1,0 +1,21 @@
+
+report z.
+
+data: begin of fs1,
+         c1	value 'A',
+         c2	value 'B',
+         c3	value 'C',
+      end of fs1.
+
+data fs2 like fs1.
+
+write: /  fs1-c1, fs1-c2, fs1-c3,
+           /  fs1. 
+
+fs1 = 'XYZ'.
+fs2  = fs1. 
+
+write: /  fs1-c1, fs1-c2, fs1-c3,
+           /  fs1,
+           /  fs2-c1, fs2-c2, fs2-c3,
+           /  fs2. 
